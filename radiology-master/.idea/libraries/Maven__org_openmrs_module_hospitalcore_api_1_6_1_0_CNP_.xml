@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.openmrs.module:hospitalcore-api:1.6.1.0(CNP)">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openmrs/module/hospitalcore-api/1.6.1.0(CNP)/hospitalcore-api-1.6.1.0(CNP).jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openmrs/module/hospitalcore-api/1.6.1.0(CNP)/hospitalcore-api-1.6.1.0(CNP)-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openmrs/module/hospitalcore-api/1.6.1.0(CNP)/hospitalcore-api-1.6.1.0(CNP)-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
