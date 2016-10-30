@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="org.openmrs.module.hospitalcore.model">
+	<class name="BloodBankDonorInfo" table="bb_donor_info" batch-size="500">
+		<id name="donorId" type="int" column="donor_id" unsaved-value="0"><generator class="native" /></id>	
+                <many-to-one name="userId" column="user_id"  class="org.openmrs.User" />	
+		<property name="donorIdentifier" column="donor_identifier" />
+                <property name="dateCreated" column="date_created" />
+                <property name="donorName" column="donor_name" />
+                <property name="donorAge" column="donor_age" />
+                <property name="donorGender" column="donor_gender" />
+                <property name="fatherName" column="father_name" />
+                <property name="motherName" column="mother_name" />
+                <property name="presentAddress" column="donor_present_address" />
+                <property name="permanentAddress" column="donor_permanent_address" />
+                <property name="contactNo" column="contact_no" />
+                <property name="emailAddress" column="email_address" />
+                <property name="profession" column="profession" />	
+	</class>
+</hibernate-mapping>

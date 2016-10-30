@@ -1,0 +1,169 @@
+/* 
+    Created on : Apr 25, 2015, 12:42:09 PM
+    Author     : khairul
+*/
+
+.kha-f { 
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width: 1000px;
+    background: #D2E9FF;
+    padding: 20px 20px 20px 20px;
+    font: 16px Tahoma, Arial, Helvetica, sans-serif;
+    color: #000000;
+    line-height: 180%;
+}
+.kha-f h1 {
+    font: 24px "Tahoma", Arial, Helvetica, sans-serif;
+    padding: 10px 10px 10px 20px;
+    display: block;
+    background: #80C2FF;
+    border-bottom: 1px solid #B8DDFF;
+    margin: -20px -20px 15px;
+}
+.kha-f tr:nth-child(even) {
+    background-color: #000000;
+}
+
+.kha-f tr:nth-child(even) {
+    background-color: #D3D3D3;
+}
+.kha-f tr td:first-child {
+width:60%;
+
+}
+
+.kha-f h1>span {
+    display: block;
+    font-size: 11px;
+}
+
+.kha-f label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.kha-f label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.kha-f label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.kha-f input[type="text"], .kha-f input[type="email"] {
+    color: #000;
+    width: 20%;
+    padding: 0px 0px 0px 5px;
+    border: 1px solid #C5E2FF;
+     
+    outline: 0;
+     background: #66C1E4;
+	box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    border: none;
+    font: 200 16px/25px Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-weight:bold;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+}
+
+.kha-f select11 {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#000;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+	width: 70%;
+
+   }
+
+.kha-f textarea{
+    height:50px;
+    padding: 5px 0px 0px 5px;
+    width: 70%;
+}
+.kha-f select  {
+   
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   border: 1px solid #AAA;
+   color: #black;
+   font-size: inherit;
+   margin: 10px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 70%;
+}
+.kha-f .button{
+    padding: 10px 30px 10px 30px;
+    background: #66C1E4;
+    border: none;
+    color: #08088A;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 3px 1px 5px #ffffff;
+	font-size:18px;
+	font-weight:bold;
+    
+}
+.kha-f .button:hover{
+    background: #3EB1DD;
+	text-shadow: 3px 1px 5px 4px #F7FE2E;
+	font-weight:bold;
+}
+
+.icon::before {
+	z-index: 10;
+	display: inline-block;
+	margin: 0 0.4em 0 0;
+	vertical-align: middle;
+	text-transform: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-size: 1.3em;
+	font-family: 'stroke7pixeden';
+	line-height: 1;
+	speak: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-bed::before {
+	content: "\0042""\0045""\0044";
+}
+.icon-select::before {
+	content: "\0042";
+}
+
+
+
+
+
+ 

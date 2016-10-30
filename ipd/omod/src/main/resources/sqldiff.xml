@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqldiff PUBLIC "-//OpenMRS//DTD OpenMRS SQL Diff Config 1.0//EN" "http://resources.openmrs.org/doctype/sqldiff-1.0.dtd">
+
+<sqldiff version="1.0">
+    <help>
+        USE:
+        The diffs are ordered by datamodel version number.
+        The script can be run in a top down fashion and is
+        expected to not failor overwrite old data
+		
+        EXPECT:
+        - "use business-database-name;" was called prior to
+        calling this script
+    </help>
+    <!-- 
+           <diff>
+                   <version>0.1</version>
+                   <author>Viet Nguyen</author>
+                   <date>Dec 06th 2010</date>
+                   <description>
+                   </description>
+                   <sql>
+                   </sql>
+           </diff>	
+    -->
+    <diff>
+        <version>0.1</version>
+        <author>cTehcbd</author>
+        <date>10th May 2015</date>
+        <description>This table create for ipd patient admitted information store.</description>
+        <sql>
+          CREATE TABLE IF NOT EXISTS `ipd_patient_admitted_queue_log` (
+            `id` INT(11) NOT NULL AUTO_INCREMENT,
+            `patient_id` INT(11) DEFAULT NULL,
+            `admitted_ward_id` INT(11) DEFAULT NULL,
+            `patient_admission_log_id` INT(11) DEFAULT NULL,
+            `patient_amitted_log_id_transfer_from` INT(11) DEFAULT NULL,
+            `user_id` INT(11) DEFAULT NULL,
+            `treating_doctor_id` INT(11) DEFAULT NULL,
+            `admission_date` DATETIME DEFAULT NULL,
+            `patient_name` VARCHAR(255) DEFAULT NULL,
+            `birth_date` DATETIME DEFAULT NULL,
+            `gender` VARCHAR(255) DEFAULT NULL,
+            `monthly_income` DECIMAL(19,2) DEFAULT NULL,
+            `patient_identifier` VARCHAR(255) DEFAULT NULL,
+            `basic_pay` VARCHAR(255) DEFAULT NULL,
+            `caste` VARCHAR(255) DEFAULT NULL,
+            `status` VARCHAR(255) DEFAULT NULL,
+            `patient_address` VARCHAR(255) DEFAULT NULL,
+            `bed` VARCHAR(255) DEFAULT NULL,
+            `father_name` VARCHAR(255) DEFAULT NULL,
+            `admission_outcome` VARCHAR(255) DEFAULT NULL,
+            `comments` VARCHAR(100) DEFAULT NULL,
+            `ipd_admitted_encounter_id` INT(11) DEFAULT NULL,
+            PRIMARY KEY (`id`)
+            ) ENGINE=INNODB DEFAULT CHARSET=utf8
+
+        </sql>
+               
+            
+    </diff>
+</sqldiff>

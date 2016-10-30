@@ -1,0 +1,11 @@
+1.4.1
+- # 453             Prescription Dosen't show '+' sign of frequency = now ok this problem
+- # 
+
+
+1.3.9
+- #1963              Redesign patient dashboard
+- #1936              Wrong Result Generated in Laboratory record
+- #1635              User should be able to send pharmacy orders to issue drugs to a patient from dashboard
+- #1633              User must be able to send investigation orders from dashboard to billing
+
