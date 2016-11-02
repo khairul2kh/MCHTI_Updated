@@ -27,13 +27,12 @@
 			<groupId>org.openmrs.test</groupId>
 			<artifactId>openmrs-test</artifactId>
 			<type>pom</type>
-		</dependency>	
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>hospitalcore-api</artifactId>
-			<version>1.6.1.0(CNP)</version>
-		 <type>jar</type>
 		</dependency>
+	 <dependency>
+	  <groupId>${project.groupId}</groupId>
+	  <artifactId>hospitalcore-api</artifactId>
+	  <version>1.4.10.13</version>
+	 </dependency>
 	</dependencies>
 
 </project>
