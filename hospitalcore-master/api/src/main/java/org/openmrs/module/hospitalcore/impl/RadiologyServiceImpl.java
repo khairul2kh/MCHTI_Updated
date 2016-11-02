@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import static net.sf.saxon.exslt.Date.date;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
@@ -65,7 +66,7 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
         this.dao = dao;
     }
 
-	//
+    //
     // RADIOLOGY FORM
     //
     public RadiologyForm saveRadiologyForm(RadiologyForm form) {
@@ -95,7 +96,7 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
         return form;
     }
 
-	//
+    //
     // RADIOLOGY DEPARTMENT
     //
     public RadiologyDepartment saveRadiologyDepartment(
@@ -129,7 +130,7 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
         }
     }
 
-	//
+    //
     // ORDER
     //
     public List<Order> getOrders(Date startDate, String phrase,
@@ -163,7 +164,7 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
         return dao.countOrders(startDate, orderType, tests, patients);
     }
 
-	//
+    //
     // RADIOLOGY TEST
     //
     public RadiologyTest saveRadiologyTest(RadiologyTest test) {
@@ -185,61 +186,58 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
     // Accept Test
     public Integer acceptTest(Order order) {
         RadiologyTest test = dao.getRadiologyTestByOrder(order);
-        String instName="NIKDU";
-        String b="00000000";
-        String du="0";
-        Date date=new Date();
-       
-        User user=Context.getAuthenticatedUser();
+        String instName = "NIKDU";
+        String b = "00000000";
+        String du = "0";
+        Date date = new Date();
+
+        User user = Context.getAuthenticatedUser();
 
         if (test == null) {
-            
-           
+
             // New Code Start Here // this update and customize for pacs 
-            
             PatientService ps = Context.getPatientService(); // for patient related information
             Patient patient = ps.getPatient(order.getPatient().getPatientId()); // same
-            
+
             /*
-            HisOrder his=new HisOrder();
-            his.setAccessionNumber(order.getOrderId().toString());
-            his.setModality(modality);
-            his.setInstitutionName(instName);
-            his.setPatientId(patient.getPatientId().toString());
-            his.setPatientName(patient.getGivenName()+" "+patient.getMiddleName()+" "+patient.getFamilyName());
-            his.setPatientIdentifier(order.getPatient().getPatientIdentifier().getIdentifier());
-            //his.setPatientBirthDate(patient.getBirthdate());
+             HisOrder his=new HisOrder();
+             his.setAccessionNumber(order.getOrderId().toString());
+             his.setModality(modality);
+             his.setInstitutionName(instName);
+             his.setPatientId(patient.getPatientId().toString());
+             his.setPatientName(patient.getGivenName()+" "+patient.getMiddleName()+" "+patient.getFamilyName());
+             his.setPatientIdentifier(order.getPatient().getPatientIdentifier().getIdentifier());
+             //his.setPatientBirthDate(patient.getBirthdate());
             
-            his.setBirthDate(b);
-            his.setSchProcStepStartDate(du);
+             his.setBirthDate(b);
+             his.setSchProcStepStartDate(du);
             
-            his.setPatient_sex(patient.getGender());
-            his.setOrderStatus("1");
-            his.setSchPrefPhysicianName(user.getGivenName());
-            his.setCreatedDate(date);
-            HisOrder save=dao.saveHisOrder(his);
-            // end His_Order
+             his.setPatient_sex(patient.getGender());
+             his.setOrderStatus("1");
+             his.setSchPrefPhysicianName(user.getGivenName());
+             his.setCreatedDate(date);
+             HisOrder save=dao.saveHisOrder(his);
+             // end His_Order
             
-            PacsData pacsData = new PacsData();
-            pacsData.setAccessionNumber(order.getOrderId().toString());
-            pacsData.setStudy(order.getConcept().getDisplayString());
-            pacsData.setStudyDate(order.getStartDate());
-            pacsData.setRecevingDate(date);
-            pacsData.setReadingPhysician(user.getGivenName());
-            pacsData.setReadingPhysicianId(user.getUserId());
-            PacsData savePacs =  dao.savePacsData(pacsData);
-            /// End Pacs_data
+             PacsData pacsData = new PacsData();
+             pacsData.setAccessionNumber(order.getOrderId().toString());
+             pacsData.setStudy(order.getConcept().getDisplayString());
+             pacsData.setStudyDate(order.getStartDate());
+             pacsData.setRecevingDate(date);
+             pacsData.setReadingPhysician(user.getGivenName());
+             pacsData.setReadingPhysicianId(user.getUserId());
+             PacsData savePacs =  dao.savePacsData(pacsData);
+             /// End Pacs_data
             
-            HisReport hisReport = new HisReport();
-            hisReport.setAccessionNumber(order.getOrderId().toString());
-            dao.saveHisReport(hisReport);
+             HisReport hisReport = new HisReport();
+             hisReport.setAccessionNumber(order.getOrderId().toString());
+             dao.saveHisReport(hisReport);
             
-            // End His_report
+             // End His_report
             
-            */
-            
+             */
             test = new RadiologyTest();
-            
+
             test.setOrder(order);
             test.setPatient(order.getPatient());
             test.setConcept(order.getConcept());
@@ -473,5 +471,16 @@ public class RadiologyServiceImpl extends BaseOpenmrsService implements
 
     public List<RadiologyTemplate> getRadiologyTemplates(Concept concept) {
         return dao.getRadiologyTemplates(concept);
+    }
+
+    public List<RadiologyTest> getRadiologyCompletedTests(Date daate, String phrase, Set<Concept> allowableTest, int pge) throws ParseException {
+        List<Patient> patients = null;
+        if (!StringUtils.isBlank(phrase)) {
+            patients = Context.getPatientService().getPatients(phrase);
+        }
+        return dao.getCompletedRTests(daate,
+                RadiologyConstants.TEST_STATUS_COMPLETED, allowableTest,
+                patients, pge, GlobalPropertyUtil.getInteger(
+                        RadiologyConstants.PROPERTY_PAGESIZE, 20));
     }
 }

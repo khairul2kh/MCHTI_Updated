@@ -421,5 +421,29 @@ public class HibernateRadiologyDAO implements RadiologyDAO {
 		return criteria.list();
 	}
 
+    public List<RadiologyTest> getCompletedRTests(Date date, String status, 
+            Set<Concept> concepts, List<Patient> patients, int page, int pageSize) throws ParseException {
+         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(
+                RadiologyTest.class);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String startDate = sdf.format(date) + " 00:00:00";
+        String endDate = sdf.format(date) + " 23:59:59";
+
+        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat(
+                "yyyy-MM-dd hh:mm:ss");
+        criteria.add(Expression.between("date",
+                dateTimeFormatter.parse(startDate),
+                dateTimeFormatter.parse(endDate)));
+        criteria.add(Restrictions.eq("status", status));
+        criteria.add(Restrictions.in("concept", concepts));
+        if (!CollectionUtils.isEmpty(patients)) {
+            criteria.add(Restrictions.in("patient", patients));
+        }
+        int firstResult = (page - 1) * pageSize;
+        criteria.setFirstResult(firstResult);
+        criteria.setMaxResults(pageSize);
+        return criteria.list();
+    }
+
     
 }

@@ -33,6 +33,24 @@ public class RadiologyForm {
 	private String description;
 	private Concept concept;
 	private String conceptName;
+        private String orderId;
+        private String patientId; 
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
 
 	public Integer getId() {
 		return id;
