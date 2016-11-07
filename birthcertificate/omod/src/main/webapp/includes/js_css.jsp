@@ -77,7 +77,7 @@ src="${pageContext.request.contextPath}/moduleResources/birthcertificate/scripts
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/scripts/page-actions_1.js"></script>
 
 <script type="text/javascript"
-src="${pageContext.request.contextPath}/moduleResources/birthcertificate/scripts/angularjs/ui-bootstrap-tpls-2.2.0.js"></script>
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/angularjs/ui-bootstrap-2.2.0.js"></script>
 
 <script type="text/javascript"
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/js/bootstrap.js"></script>
