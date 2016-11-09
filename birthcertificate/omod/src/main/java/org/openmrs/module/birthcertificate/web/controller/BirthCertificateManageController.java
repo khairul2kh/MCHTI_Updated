@@ -11,8 +11,10 @@
  */
 package org.openmrs.module.birthcertificate.web.controller;
 
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.User;
 import org.openmrs.api.context.Context;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +32,8 @@ public class BirthCertificateManageController {
 
     @RequestMapping(value = "/module/birthcertificate/main.form", method = RequestMethod.GET)
     public String main(Model model) {
-        
-         
+        List<User> user=Context.getUserService().getAllUsers();
+        model.addAttribute("user",user);
         return "module/birthcertificate/main/mainpage";
     }
 
