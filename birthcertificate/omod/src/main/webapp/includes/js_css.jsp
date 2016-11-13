@@ -70,3 +70,18 @@ src="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstr
 <script type="text/javascript"
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/angular/angular.min.js"></script>
 
+<link type="text/css" rel="stylesheet"
+      href="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/bootstrap.min.css"/>
+
+<link type="text/css" rel="stylesheet"
+      href="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/bootstrap-clockpicker.min.css"/>
+	  
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/jquery.min.js"></script>
+
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/bootstrap-clockpicker.min.js"></script>
+
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/jquery-ui-1.11.1.js"></script>
+
