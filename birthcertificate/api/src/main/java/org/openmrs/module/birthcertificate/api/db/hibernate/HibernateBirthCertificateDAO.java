@@ -16,7 +16,9 @@ package org.openmrs.module.birthcertificate.api.db.hibernate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
+import org.openmrs.api.db.DAOException;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
+import org.openmrs.module.birthcertificate.model.BirthRegistration;
 
 /**
  * It is a default implementation of  {@link BirthCertificateDAO}.
@@ -32,11 +34,14 @@ public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
     public void setSessionFactory(SessionFactory sessionFactory) {
 	    this.sessionFactory = sessionFactory;
     }
-    
-	/**
-     * @return the sessionFactory
-     */
+   
     public SessionFactory getSessionFactory() {
 	    return sessionFactory;
+    }
+
+    @Override
+    public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws DAOException {
+       sessionFactory.getCurrentSession().saveOrUpdate(birthRegistration);
+       return birthRegistration;
     }
 }

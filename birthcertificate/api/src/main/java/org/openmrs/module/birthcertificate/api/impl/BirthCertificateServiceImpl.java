@@ -16,8 +16,10 @@ package org.openmrs.module.birthcertificate.api.impl;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.api.APIException;
 import org.openmrs.module.birthcertificate.api.BirthCertificateService;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
+import org.openmrs.module.birthcertificate.model.BirthRegistration;
 
 /**
  * It is a default implementation of {@link BirthCertificateService}.
@@ -28,17 +30,17 @@ public class BirthCertificateServiceImpl extends BaseOpenmrsService implements B
 	
 	private BirthCertificateDAO dao;
 	
-	/**
-     * @param dao the dao to set
-     */
+	 
     public void setDao(BirthCertificateDAO dao) {
 	    this.dao = dao;
     }
-    
-    /**
-     * @return the dao
-     */
+     
     public BirthCertificateDAO getDao() {
 	    return dao;
+    }
+
+    @Override
+    public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws APIException {
+       return dao.saveBirthRegistration(birthRegistration);
     }
 }
