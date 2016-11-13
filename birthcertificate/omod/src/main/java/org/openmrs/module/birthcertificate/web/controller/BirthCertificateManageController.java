@@ -12,6 +12,7 @@
 package org.openmrs.module.birthcertificate.web.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.User;
@@ -21,9 +22,10 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import java.net.*;
 
 /**
- * The main controller.
+ * The main controller. 01772-057010
  */
 @Controller
 public class BirthCertificateManageController {
@@ -31,9 +33,16 @@ public class BirthCertificateManageController {
     protected final Log log = LogFactory.getLog(getClass());
 
     @RequestMapping(value = "/module/birthcertificate/main.form", method = RequestMethod.GET)
-    public String main(Model model) {
-        List<User> user=Context.getUserService().getAllUsers();
-        model.addAttribute("user",user);
+    public String main(HttpServletRequest request, Model model) {
+        List<User> user = Context.getUserService().getAllUsers();
+        model.addAttribute("user", user);
+        System.out.println(request.getRemoteAddr());
+        return "module/birthcertificate/main/mainpage";
+    }
+    
+     @RequestMapping(value = "/module/birthcertificate/main.form", method = RequestMethod.POST)
+    public String save(HttpServletRequest request, Model model) {
+        
         return "module/birthcertificate/main/mainpage";
     }
 

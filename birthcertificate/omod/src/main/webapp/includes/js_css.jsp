@@ -64,3 +64,9 @@ src="${pageContext.request.contextPath}/moduleResources/birthcertificate/scripts
 <script type="text/javascript"
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/angular.js"></script>
 
+<link type="text/css" rel="stylesheet"
+      href="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/font-awesome.min.css"/>
+
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/angular/angular.min.js"></script>
+
