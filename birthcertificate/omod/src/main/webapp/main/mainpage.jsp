@@ -105,7 +105,7 @@
                 <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
                     <ul class="nav navbar-nav navbar-right">
                         <li ui-sref-active="active">
-                            <a ui-sref="home" ng-click="vm.collapseNavbar()">
+                            <a ui-sref="home" href="${pageContext.request.contextPath}/">
                                 <span class="glyphicon glyphicon-home"></span>
                                 <span class="hidden-sm">Home</span>
                             </a>
@@ -122,11 +122,13 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu" role="menu" >
-                                <li  ><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                                <li><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
                                 <li  ><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
                                 <li  ><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li  ><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                                <li><a role="menuitem" tabindex="-1" href='${pageContext.request.contextPath}/logout'>
+                                        <span class="glyphicon glyphicon-log-out"></span>&nbsp; Log Out</a></li>
+
                             </ul>
                         </li>
                     </ul> 
