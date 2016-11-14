@@ -44,21 +44,101 @@
                 background-color: #EAE7E7;
                 border: 1px solid #ddd;
                 border-radius: 4px;
-                box-shadow: 0 0 30px black;
+                box-shadow: 0 0 10px #A4A4A4;
             }
             .custom-width {
                 width: 80px !important;
             }
+            .tdn a{text-decoration: none;}
+            .nav-tabs>li.active>a,
+            .nav-tabs>li.active>a:hover,
+            .nav-tabs>li.active>a:focus {
+                color: #555;
+                background-color: #F2F2F2;
+                border: 1px solid #eee;
+                border-bottom-color: transparent;
+                cursor: default
+            }
         </style>
     </head>
 
-    <body ng-app  class="ng-cloak">
+    <body ng-app  class="ng-cloak tdn">
+
+        <!--
+            <div class="container container-fluid" >
+            <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Birth Registration</a></li>
+            <li ><a href="#">About</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Tutorials <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>                        
+                </ul>
+            </li>  
+            </ul>
+            </div>
+
+            <nav class="navbar navbar-default" role="navigation">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    Accounts <span class="glyphicon glyphicon-user" ></span> 
+                </button>
+            <div class="dropdown floatRight" style="padding-top:5px; padding-right:40px;">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    Accounts <span class="glyphicon glyphicon-user" ></span> 
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                </ul>
+            </div>  
+        </nav>
+        --> 
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ui-sref-active="active">
+                            <a ui-sref="home" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-home"></span>
+                                <span class="hidden-sm">Home</span>
+                            </a>
+                        </li>
+
+                        <li   class="dropdown pointer">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
+                                <span>
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span class="hidden-sm">
+                                        Account
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" >
+                                <li  ><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                                <li  ><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                                <li  ><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li  ><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </nav>         
+
         <div class="generic-container">
             <div class="panel panel-default">
                 <div class="panel-heading"><span class="lead">Birth Certificate Entry Form </span></div>
                 <div class="formcontainer">
                     <form name="myForm" action="main.form" class="form-horizontal" method="POST" >
-
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label class="control-label col-sm-4" for="memo">Memo No: MCHTI/Azim:/Birth/</label>
@@ -67,10 +147,9 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="form-group col-md-12 has-feedback">
-                                <label class="control-label col-sm-4" for="date">Date : </label>
+                                <label class="control-label col-sm-4" >Date : </label>
                                 <div class="col-md-3">
                                     <input type="text" style="padding-left:10px;" name="date"  id="date" class="username form-control input-sm" placeholder="Enter date" />                  
                                     <span class="glyphicon glyphicon-calendar form-control-feedback icon-success" ></span>
@@ -89,7 +168,7 @@
 
                         <div class="row">
                             <div class="form-group col-md-12 has-feedback">
-                                <label class="control-label col-sm-4" for="date1">Date of Birth : </label>
+                                <label class="control-label col-sm-4">Date of Birth : </label>
                                 <div class="col-md-3">
                                     <input type="text" style="padding-left:10px;" name="date1"  id="date1" class="username form-control input-sm" placeholder="Enter Date of birth" />                  
                                     <span class="glyphicon glyphicon-calendar form-control-feedback icon-success" ></span>
@@ -168,7 +247,7 @@
                                     <span class="fa fa-floppy-o fa-lg"></span> Save
                                 </button>                           
 
-                                <button type="button" class="btn btn-warning">
+                                <button type="button" class="btn btn-warning" onclick="$('form')[0].reset()">
                                     <span class="fa fa-refresh"></span> Reset
                                 </button>
 
@@ -179,29 +258,32 @@
             </div>
         </div>
 
+    </nav>
+    <script>
+        jQuery(document).ready(function() {
+            $("#date").css('cursor', 'pointer');
+            $('#date').datepicker();
+            $("#date1").css('cursor', 'pointer');
+            $('#date1').datepicker();
+        });
 
-        <script>
-            jQuery(document).ready(function() {
-                $("#date").css('cursor', 'pointer');
-                $('#date').datepicker();
-                $("#date1").css('cursor', 'pointer');
-                $('#date1').datepicker();
-            });
+        $('.clockpicker').clockpicker()
+                .find('input').change(function() {
+            console.log(this.value);
+        });
+        var input = $('#single-input').clockpicker({
+            placement: 'bottom',
+            align: 'left',
+            autoclose: true,
+            'default': 'now'
+        });
 
-            $('.clockpicker').clockpicker()
-                    .find('input').change(function() {
-                console.log(this.value);
-            });
-            var input = $('#single-input').clockpicker({
-                placement: 'bottom',
-                align: 'left',
-                autoclose: true,
-                'default': 'now'
-            });
-        </script>
-
-
-    </body>
+        $('ul li a').click(function() {
+            $('ul li.active').removeClass('active');
+            $(this).closest('li').addClass('active');
+        });
+    </script>
+</body>
 </html>
 
 <%@ include file="/WEB-INF/template/footerMinimal.jsp"%>

@@ -64,6 +64,9 @@ src="${pageContext.request.contextPath}/moduleResources/birthcertificate/scripts
 <script type="text/javascript"
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/angular.js"></script>
 
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/bootstrap.min-3.3.7.js"></script>
+
 <link type="text/css" rel="stylesheet"
       href="${pageContext.request.contextPath}/moduleResources/birthcertificate/bootstrap/font-awesome.min.css"/>
 
@@ -84,4 +87,7 @@ src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/
 
 <script type="text/javascript"
 src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/jquery-ui-1.11.1.js"></script>
+
+<script type="text/javascript"
+src="${pageContext.request.contextPath}/moduleResources/birthcertificate/assets/css/bootstrap.min-3.3.7.js"></script>
 
