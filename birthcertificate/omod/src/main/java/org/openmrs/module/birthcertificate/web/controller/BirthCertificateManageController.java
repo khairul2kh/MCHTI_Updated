@@ -23,6 +23,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.net.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.openmrs.module.birthcertificate.BirthCertificate;
+import org.openmrs.module.birthcertificate.api.BirthCertificateService;
+import org.openmrs.module.birthcertificate.model.BirthRegistration;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * The main controller. 01772-057010
@@ -36,14 +44,57 @@ public class BirthCertificateManageController {
     public String main(HttpServletRequest request, Model model) {
         List<User> user = Context.getUserService().getAllUsers();
         model.addAttribute("user", user);
+        User u = Context.getAuthenticatedUser();
+        model.addAttribute("u", u);
+
         System.out.println(request.getRemoteAddr());
         return "module/birthcertificate/main/mainpage";
     }
-    
-     @RequestMapping(value = "/module/birthcertificate/main.form", method = RequestMethod.POST)
-    public String save(HttpServletRequest request, Model model) {
-        
-        return "module/birthcertificate/main/mainpage";
+
+    @RequestMapping(value = "/module/birthcertificate/main.form", method = RequestMethod.POST)
+    public String save(HttpServletRequest request,
+            @RequestParam(value = "memo", required = false) String memo,
+            @RequestParam(value = "date", required = false) String date,
+            @RequestParam(value = "regNo", required = false) String regNo,
+            @RequestParam(value = "birthName", required = false) String birthName,
+            @RequestParam(value = "sex", required = false) String sex,
+            @RequestParam(value = "date1", required = false) String dateOfBirth,
+            @RequestParam(value = "time", required = false) String timeOfBirth,
+            @RequestParam(value = "motName", required = false) String motName,
+            @RequestParam(value = "nidNoMot", required = false) String nidNoMot,
+            @RequestParam(value = "fatName", required = false) String fatName,
+            @RequestParam(value = "nidNoFat", required = false) String nidNoFat,
+            @RequestParam(value = "preAdd", required = false) String preAdd,
+            @RequestParam(value = "permaAdd", required = false) String permaAdd,
+            Model model) throws ParseException {
+        BirthCertificateService bcs = Context.getService(BirthCertificateService.class);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date deDate = null;
+        deDate = sdf.parse(date);
+
+        BirthRegistration br = new BirthRegistration();
+        br.setMemoNo(memo);
+        br.setDate(deDate);
+        br.setRegistrationNo(regNo);
+        br.setName(birthName);
+        br.setSex(sex);
+        br.setDateOfBirth(deDate);
+        br.setTimeOfBirth(null);
+        br.setMothersName(motName);
+        br.setNidMoth(nidNoMot);
+        br.setFathersName(fatName);
+        br.setNidFath(nidNoFat);
+        br.setPresentAdd(preAdd);
+        br.setPermanentAdd(permaAdd);
+        br.setCreatedDate(new Date());
+        br.setCreator(Context.getAuthenticatedUser());
+
+        bcs.saveBirthRegistration(br);
+        model.addAttribute("msg", "Successfully Registred!!");
+
+        // return "module/birthcertificate/main/mainpage";
+        return "redirect:/module/birthcertificate/birthView.htm?id=" + br.getId();
     }
 
 }

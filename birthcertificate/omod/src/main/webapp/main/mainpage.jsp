@@ -59,6 +59,15 @@
                 border-bottom-color: transparent;
                 cursor: default
             }
+            .header{
+                display:block;
+                height:50px;
+                position:relative;
+                background: #50a3a2;
+                background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+                background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+                width:100%;
+            }
         </style>
     </head>
 
@@ -100,9 +109,14 @@
         </nav>
         --> 
 
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default" role="navigation">            
             <div class="container">
+
+                <div class="navbar-header" style="padding-top:12px;">
+                    <span> Welcome Mr./Ms. : ${u.person.givenName} ${u.person.middleName} ${u.person.familyName} </span>
+                </div>
                 <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
+
                     <ul class="nav navbar-nav navbar-right">
                         <li ui-sref-active="active">
                             <a ui-sref="home" href="${pageContext.request.contextPath}/">
@@ -161,11 +175,30 @@
 
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label class="control-label col-sm-4" for="birthName">Name : </label>
+                                <label class="control-label col-sm-4" for="regNo">Registration No : </label>
                                 <div class="col-md-7">
-                                    <input type="text" style="padding-left:10px;" name="birthName" id="birthName" class="form-control input-sm" placeholder="Enter Name" />
+                                    <input type="text" style="padding-left:10px;" name="regNo" id="regNo" class="form-control input-sm" placeholder="Enter Reg No" />
                                 </div>
                             </div> 
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 has-feedback">
+                                <label class="control-label col-sm-4">Name : </label>
+                                <div class="col-md-4">
+                                    <input type="text" style="padding-left:10px;" name="birthName"  id="birthName" class="username form-control input-sm" placeholder="Enter Name" />                  
+
+                                </div>
+                                <label class="control-label col-md-1" for="sex">Sex :</label>
+                                <div class="col-md-2">
+                                    <select class="form-control cursor-pointer" name="sex" id="sex">
+                                        <option value="M"> Male</option>
+                                        <option value="F"> Female</option>
+                                        <option value="O"> Others</option>
+                                    </select>
+                                </div>
+
+                            </div>
                         </div>
 
                         <div class="row">
@@ -245,7 +278,7 @@
 
                         <div class="row">
                             <div class="form-actions floatRight">
-                                <button type="button" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">
                                     <span class="fa fa-floppy-o fa-lg"></span> Save
                                 </button>                           
 
