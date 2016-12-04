@@ -21,5 +21,7 @@ import org.openmrs.module.birthcertificate.model.BirthRegistration;
 public interface BirthCertificateDAO {
 
  public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws DAOException;
+ 
+ public BirthRegistration getBirthRegById(Integer id)throws DAOException;
 }
 

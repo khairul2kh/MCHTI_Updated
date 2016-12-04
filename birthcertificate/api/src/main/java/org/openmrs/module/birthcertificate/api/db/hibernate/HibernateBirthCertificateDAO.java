@@ -15,7 +15,9 @@ package org.openmrs.module.birthcertificate.api.db.hibernate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.openmrs.api.db.DAOException;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
@@ -43,5 +45,12 @@ public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
     public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws DAOException {
        sessionFactory.getCurrentSession().saveOrUpdate(birthRegistration);
        return birthRegistration;
+    }
+
+    @Override
+    public BirthRegistration getBirthRegById(Integer id) throws DAOException {
+        Criteria criteria=sessionFactory.getCurrentSession().createCriteria(BirthRegistration.class);
+         criteria.add(Restrictions.eq("id", id));
+        return (BirthRegistration) criteria.uniqueResult();
     }
 }

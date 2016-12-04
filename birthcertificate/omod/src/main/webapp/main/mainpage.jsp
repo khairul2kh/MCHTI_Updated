@@ -70,44 +70,14 @@
             }
         </style>
     </head>
+    <script>
+        if (SESSION.checkSession()) {
+            jQuery(document).ready(function() {
 
+            });
+        }
+    </script>
     <body ng-app  class="ng-cloak tdn">
-
-        <!--
-            <div class="container container-fluid" >
-            <ul class="nav nav-tabs">
-            <li class="active"><a href="#">Birth Registration</a></li>
-            <li ><a href="#">About</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Tutorials <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>                        
-                </ul>
-            </li>  
-            </ul>
-            </div>
-
-            <nav class="navbar navbar-default" role="navigation">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                    Accounts <span class="glyphicon glyphicon-user" ></span> 
-                </button>
-            <div class="dropdown floatRight" style="padding-top:5px; padding-right:40px;">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                    Accounts <span class="glyphicon glyphicon-user" ></span> 
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-                </ul>
-            </div>  
-        </nav>
-        --> 
 
         <nav class="navbar navbar-default" role="navigation">            
             <div class="container">
