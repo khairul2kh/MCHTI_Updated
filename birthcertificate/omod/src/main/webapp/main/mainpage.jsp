@@ -162,9 +162,9 @@
                                 <label class="control-label col-md-1" for="sex">Sex :</label>
                                 <div class="col-md-2">
                                     <select class="form-control cursor-pointer" name="sex" id="sex">
-                                        <option value="M"> Male</option>
-                                        <option value="F"> Female</option>
-                                        <option value="O"> Others</option>
+                                        <option value="Male"> Male</option>
+                                        <option value="Female"> Female</option>
+                                        <option value="Transgender">Transgender</option>
                                     </select>
                                 </div>
 
