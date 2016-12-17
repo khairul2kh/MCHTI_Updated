@@ -22,7 +22,8 @@ public class BirthRegistration {
     private String name;
     private String sex;
     private Date dateOfBirth;
-    private Time timeOfBirth;
+    //private Time timeOfBirth;
+    private String timeOfBirth;
     private String mothersName;
     private String nidMoth;
     private String fathersName;
@@ -88,11 +89,11 @@ public class BirthRegistration {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Time getTimeOfBirth() {
+    public String getTimeOfBirth() {
         return timeOfBirth;
     }
 
-    public void setTimeOfBirth(Time timeOfBirth) {
+    public void setTimeOfBirth(String timeOfBirth) {
         this.timeOfBirth = timeOfBirth;
     }
 
@@ -159,5 +160,7 @@ public class BirthRegistration {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
+
+    
     
 }

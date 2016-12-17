@@ -27,7 +27,7 @@
             `name` varchar(255) default NULL,
             `sex` varchar(10) default NULL,
             `date_of_birth` date default NULL,
-            `time_of_birth` time,
+            `time_of_birth` varchar(20) default NULL;
             `mothers_name` varchar(255) default NULL,
             `nid_no_moth` varchar(255) default NULL,
             `fathers_name` varchar(255) default NULL,

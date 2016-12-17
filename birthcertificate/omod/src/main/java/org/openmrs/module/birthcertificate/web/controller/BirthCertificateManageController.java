@@ -26,7 +26,7 @@ import java.net.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.openmrs.module.birthcertificate.BirthCertificate;
+//import org.openmrs.module.birthcertificate.BirthCertificate;
 import org.openmrs.module.birthcertificate.api.BirthCertificateService;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -80,7 +80,7 @@ public class BirthCertificateManageController {
         br.setName(birthName);
         br.setSex(sex);
         br.setDateOfBirth(deDate);
-        br.setTimeOfBirth(null);
+        br.setTimeOfBirth(timeOfBirth);
         br.setMothersName(motName);
         br.setNidMoth(nidNoMot);
         br.setFathersName(fatName);

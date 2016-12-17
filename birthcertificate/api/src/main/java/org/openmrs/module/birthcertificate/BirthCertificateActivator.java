@@ -36,7 +36,8 @@ public class BirthCertificateActivator implements ModuleActivator {
 	 * @see ModuleActivator#contextRefreshed()
 	 */
 	public void contextRefreshed() {
-		log.info("Birth Certificate Module refreshed");
+		// TODO Auto-generated method stub
+		
 	}
 	
 	/**

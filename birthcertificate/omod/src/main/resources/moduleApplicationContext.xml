@@ -24,16 +24,16 @@
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
-				<value>${project.parent.groupId}.${project.parent.artifactId}.api.BirthCertificateService</value>
+				<value>org.openmrs.module.birthcertificate.api.BirthCertificateService</value>
 				<bean
 					class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 					<property name="transactionManager">
 						<ref bean="transactionManager" />
 					</property>
 					<property name="target">
-						<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.impl.BirthCertificateServiceImpl">
+						<bean class="org.openmrs.module.birthcertificate.api.impl.BirthCertificateServiceImpl">
 							<property name="dao">
-								<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.db.hibernate.HibernateBirthCertificateDAO">
+								<bean class="org.openmrs.module.birthcertificate.api.db.hibernate.HibernateBirthCertificateDAO">
 									<property name="sessionFactory">
 										<ref bean="sessionFactory" />
 									</property>
