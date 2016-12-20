@@ -47,7 +47,7 @@ public class BirthCertificateManageController {
         User u = Context.getAuthenticatedUser();
         model.addAttribute("u", u);
 
-        System.out.println(request.getRemoteAddr());
+       // System.out.println(request.getRemoteAddr());
         return "module/birthcertificate/main/mainpage";
     }
 
