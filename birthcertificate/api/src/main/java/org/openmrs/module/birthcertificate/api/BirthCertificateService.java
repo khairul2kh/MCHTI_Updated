@@ -11,7 +11,10 @@
  */
 package org.openmrs.module.birthcertificate.api;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> origin/master
 import org.openmrs.api.APIException;
 import org.openmrs.api.OpenmrsService;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
@@ -20,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface BirthCertificateService extends OpenmrsService {
 
+<<<<<<< HEAD
     public void addbirthCertificate(BirthRegistration birthRegistration) throws APIException;
 
     public void updatebirthCertificate(BirthRegistration birthRegistration) throws APIException;
@@ -30,5 +34,10 @@ public interface BirthCertificateService extends OpenmrsService {
 
    public BirthRegistration getBirthRegById(Integer id) throws APIException;
 
+=======
+public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws APIException;
+
+public BirthRegistration getBirthRegById(Integer id)throws APIException;
+>>>>>>> origin/master
 
 }

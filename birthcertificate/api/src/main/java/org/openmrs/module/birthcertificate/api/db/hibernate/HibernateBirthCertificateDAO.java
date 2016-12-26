@@ -22,8 +22,11 @@ import org.hibernate.criterion.Restrictions;
 import org.openmrs.api.db.DAOException;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+=======
+>>>>>>> origin/master
 
 /**
  * It is a default implementation of  {@link BirthCertificateDAO}.
@@ -47,6 +50,7 @@ public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
     }
 
     @Override
+<<<<<<< HEAD
     public BirthRegistration getBirthRegById(Integer id) throws DAOException {
            Criteria criteria=sessionFactory.getCurrentSession().createCriteria(BirthRegistration.class);
          criteria.add(Restrictions.eq("id", id));
@@ -76,4 +80,17 @@ public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
     }
 
 
+=======
+    public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws DAOException {
+       sessionFactory.getCurrentSession().saveOrUpdate(birthRegistration);
+       return birthRegistration;
+    }
+
+    @Override
+    public BirthRegistration getBirthRegById(Integer id) throws DAOException {
+        Criteria criteria=sessionFactory.getCurrentSession().createCriteria(BirthRegistration.class);
+         criteria.add(Restrictions.eq("id", id));
+        return (BirthRegistration) criteria.uniqueResult();
+    }
+>>>>>>> origin/master
 }

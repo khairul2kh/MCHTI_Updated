@@ -32,7 +32,11 @@
                 background-color: #DAE8E8;
                 padding: 20px;
             }
+<<<<<<< HEAD
             .tablecontainer{ 
+=======
+            .tablecontainer{
+>>>>>>> origin/master
                 padding-left: 20px;
             }
             .generic-container {
@@ -72,7 +76,11 @@
     </head>
     <script>
         if (SESSION.checkSession()) {
+<<<<<<< HEAD
             jQuery(document).ready(function () {
+=======
+            jQuery(document).ready(function() {
+>>>>>>> origin/master
 
             });
         }
@@ -129,13 +137,21 @@
                             <div class="form-group col-md-12">
                                 <label class="control-label col-sm-4" for="memo">Memo No: MCHTI/Azim:/Birth/</label>
                                 <div class="col-md-7">
+<<<<<<< HEAD
                                     <input type="text" style="padding-left:10px;" name="memoNo" id="memoNo" class="form-control input-sm" placeholder="Enter memo no"  />
+=======
+                                    <input type="text" style="padding-left:10px;" name="memo" id="memo" class="form-control input-sm" placeholder="Enter memo no"  />
+>>>>>>> origin/master
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12 has-feedback">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" >Date :</label>
+=======
+                                <label class="control-label col-sm-4" >Date : </label>
+>>>>>>> origin/master
                                 <div class="col-md-3">
                                     <input type="text" style="padding-left:10px;" name="date"  id="date" class="username form-control input-sm" placeholder="Enter date" />                  
                                     <span class="glyphicon glyphicon-calendar form-control-feedback icon-success" ></span>
@@ -145,18 +161,30 @@
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="regNo">Registration No :</label>
                                 <div class="col-md-7">
                                     <input type="text" style="padding-left:10px;" name="registrationNo" id="registrationNo" class="form-control input-sm" placeholder="Enter Reg No" />
+=======
+                                <label class="control-label col-sm-4" for="regNo">Registration No : </label>
+                                <div class="col-md-7">
+                                    <input type="text" style="padding-left:10px;" name="regNo" id="regNo" class="form-control input-sm" placeholder="Enter Reg No" />
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12 has-feedback">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4">Name :</label>
                                 <div class="col-md-4">
                                     <input type="text" style="padding-left:10px;" name="name"  id="name" class="username form-control input-sm" placeholder="Enter Name" />                  
+=======
+                                <label class="control-label col-sm-4">Name : </label>
+                                <div class="col-md-4">
+                                    <input type="text" style="padding-left:10px;" name="birthName"  id="birthName" class="username form-control input-sm" placeholder="Enter Name" />                  
+>>>>>>> origin/master
 
                                 </div>
                                 <label class="control-label col-md-1" for="sex">Sex :</label>
@@ -173,16 +201,26 @@
 
                         <div class="row">
                             <div class="form-group col-md-12 has-feedback">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" >Date of Birth :</label>
                                 <div class="col-md-3">
                                     <input type="text" style="padding-left:10px;" name="dateOfBirth"  id="dateOfBirth" class="username form-control input-sm" placeholder="Enter Birth date" />                  
+=======
+                                <label class="control-label col-sm-4">Date of Birth : </label>
+                                <div class="col-md-3">
+                                    <input type="text" style="padding-left:10px;" name="date1"  id="date1" class="username form-control input-sm" placeholder="Enter Date of birth" />                  
+>>>>>>> origin/master
                                     <span class="glyphicon glyphicon-calendar form-control-feedback icon-success" ></span>
                                 </div>
                                 <label class="control-label col-sm-2" for="time">Time of Birth : </label>
                                 <div class="col-md-2">
                                     <div class="clearfix">
                                         <div class="input-group clockpicker pull-center" data-placement="left" data-align="top" data-autoclose="true">
+<<<<<<< HEAD
                                             <input type="text" name="timeOfBirth" class="form-control" value="00:00">
+=======
+                                            <input type="text" name="time" class="form-control" value="00:00">
+>>>>>>> origin/master
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-time"></span>
                                             </span>
@@ -194,54 +232,90 @@
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="mothersName">Mother's Name : </label>
                                 <div class="col-md-7">
                                     <input type="text" style="padding-left:10px;" name="mothersName" id="mothersName" class="form-control input-sm" placeholder="Enter Mother's Name" />
+=======
+                                <label class="control-label col-sm-4" for="motName">Mother's Name : </label>
+                                <div class="col-md-7">
+                                    <input type="text" style="padding-left:10px;" name="motName" id="motName" class="form-control input-sm" placeholder="Enter Mother's Name" />
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="nidMoth">NID No : </label>
                                 <div class="col-md-7">
                                     <input type="text" style="padding-left:10px;" name="nidMoth" id="nidMoth" class="form-control input-sm" placeholder="Enter Nid no" />
+=======
+                                <label class="control-label col-sm-4" for="nidNoMot">NID No : </label>
+                                <div class="col-md-7">
+                                    <input type="text" style="padding-left:10px;" name="nidNoMot" id="nidNoMot" class="form-control input-sm" placeholder="Enter Nid no" />
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="fathersName">Father's Name : </label>
                                 <div class="col-md-7">
                                     <input type="text" style="padding-left:10px;" name="fathersName" id="fathersName" class="form-control input-sm" placeholder="Enter Father's Name" />
+=======
+                                <label class="control-label col-sm-4" for="fatName">Fother's Name : </label>
+                                <div class="col-md-7">
+                                    <input type="text" style="padding-left:10px;" name="fatName" id="fatName" class="form-control input-sm" placeholder="Enter Father's Name" />
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="nidFath">NID No : </label>
                                 <div class="col-md-7">
                                     <input type="text" style="padding-left:10px;" name="nidFath" id="nidFath" class="form-control input-sm" placeholder="Enter Nid no" />
+=======
+                                <label class="control-label col-sm-4" for="nidNoFat">NID No : </label>
+                                <div class="col-md-7">
+                                    <input type="text" style="padding-left:10px;" name="nidNoFat" id="nidNoFat" class="form-control input-sm" placeholder="Enter Nid no" />
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" for="presentAdd">Present Address : </label>
                                 <div class="col-md-7">
                                     <textarea class="form-control" rows="5" name="presentAdd" id="presentAdd" placeholder="Present Address" ></textarea>
+=======
+                                <label class="control-label col-sm-4" for="preAdd">Present Address : </label>
+                                <div class="col-md-7">
+                                    <textarea class="form-control" rows="5" name="preAdd" id="preAdd" placeholder="Present Address" ></textarea>
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-12">
+<<<<<<< HEAD
                                 <label class="control-label col-sm-4" placeholder="Permanent Address" for="permanentAdd">Permanent Address : </label>
                                 <div class="col-md-7">
                                     <textarea class="form-control" name="permanentAdd" placeholder="Permanent Address" rows="5" id="permanentAdd"></textarea>
+=======
+                                <label class="control-label col-sm-4" placeholder="Permanent Address" for="permaAdd">Permanent Address : </label>
+                                <div class="col-md-7">
+                                    <textarea class="form-control" name="permaAdd" placeholder="Permanent Address" rows="5" id="permaAdd"></textarea>
+>>>>>>> origin/master
                                 </div>
                             </div> 
                         </div>
@@ -265,6 +339,7 @@
 
     </nav>
     <script>
+<<<<<<< HEAD
         jQuery(document).ready(function () {
             $("#date").css('cursor', 'pointer');
             jQuery('#date').datepicker({yearRange: 'c-30:c+30', dateFormat: 'dd/mm/yy', changeMonth: true, changeYear: true});
@@ -275,6 +350,17 @@
 
         $('.clockpicker').clockpicker()
                 .find('input').change(function () {
+=======
+        jQuery(document).ready(function() {
+            $("#date").css('cursor', 'pointer');
+            $('#date').datepicker();
+            $("#date1").css('cursor', 'pointer');
+            $('#date1').datepicker();
+        });
+
+        $('.clockpicker').clockpicker()
+                .find('input').change(function() {
+>>>>>>> origin/master
             console.log(this.value);
         });
         var input = $('#single-input').clockpicker({
@@ -284,7 +370,11 @@
             'default': 'now'
         });
 
+<<<<<<< HEAD
         $('ul li a').click(function () {
+=======
+        $('ul li a').click(function() {
+>>>>>>> origin/master
             $('ul li.active').removeClass('active');
             $(this).closest('li').addClass('active');
         });

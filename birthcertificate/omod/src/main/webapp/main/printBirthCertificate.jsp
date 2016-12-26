@@ -6,7 +6,10 @@
 <%@ include file="/WEB-INF/template/include.jsp"%>
 <%@ include file="/WEB-INF/template/headerMinimal.jsp"%>
 <%@ include file="../includes/js_css.jsp"%> 
+<<<<<<< HEAD
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+=======
+>>>>>>> origin/master
 <style>
     .tdn a{text-decoration: none;
     }
@@ -17,20 +20,31 @@
         margin-bottom: 20px;
         padding: 20px;
         background-color: #EAE7E7;
+<<<<<<< HEAD
         border: 15px solid #ddd;
         border-radius: 9px;
         box-shadow: 0 0 20px #A4A4A4;
+=======
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #A4A4A4;
+>>>>>>> origin/master
     }
 </style>
 
 <script>
     if (SESSION.checkSession()) {
+<<<<<<< HEAD
         jQuery(document).ready(function () {
+=======
+        jQuery(document).ready(function() {
+>>>>>>> origin/master
 
         });
     }
 </script>
 
+<<<<<<< HEAD
 <!--<script>
     function deleteCerficate(bc){
         if(confirm('Do You Want to Delete This Cerficate ?')
@@ -48,6 +62,8 @@
             });
         </script>
 
+=======
+>>>>>>> origin/master
 <nav class="navbar navbar-default tdn" role="navigation">            
     <div class="container">
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
@@ -76,6 +92,7 @@
         </div>
     </div>
 </nav> 
+<<<<<<< HEAD
                                 
 <div class="container">
     <h2><center> Birth Certificate Information</center></h2>
@@ -294,3 +311,22 @@
 </div>
 
 
+=======
+<div class="container">
+    <h2>Birth Certificate Print Form </h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Memo No</th>
+                <td>${birthReg.memoNo}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td><fmt:formatDate value="${birthReg.date}" pattern="dd-MM-yyyy" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+>>>>>>> origin/master

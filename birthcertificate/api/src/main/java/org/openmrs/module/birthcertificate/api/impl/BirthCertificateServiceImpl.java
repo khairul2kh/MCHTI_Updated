@@ -19,9 +19,12 @@ import org.openmrs.api.APIException;
 import org.openmrs.module.birthcertificate.api.BirthCertificateService;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+=======
+>>>>>>> origin/master
 
 /**
  * It is a default implementation of {@link BirthCertificateService}.
@@ -31,7 +34,10 @@ public class BirthCertificateServiceImpl extends BaseOpenmrsService implements B
 
     protected final Log log = LogFactory.getLog(this.getClass());
 
+<<<<<<< HEAD
     @Autowired
+=======
+>>>>>>> origin/master
     private BirthCertificateDAO dao;
 
     public void setDao(BirthCertificateDAO dao) {
@@ -42,6 +48,7 @@ public class BirthCertificateServiceImpl extends BaseOpenmrsService implements B
         return dao;
     }
 
+<<<<<<< HEAD
 
     @Override
     @Transactional
@@ -75,4 +82,15 @@ public class BirthCertificateServiceImpl extends BaseOpenmrsService implements B
 
 
     
+=======
+    @Override
+    public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws APIException {
+        return dao.saveBirthRegistration(birthRegistration);
+    }
+
+    @Override
+    public BirthRegistration getBirthRegById(Integer id) throws APIException {
+        return dao.getBirthRegById(id);
+    }
+>>>>>>> origin/master
 }

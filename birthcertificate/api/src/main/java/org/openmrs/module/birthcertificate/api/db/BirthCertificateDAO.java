@@ -11,7 +11,10 @@
  */
 package org.openmrs.module.birthcertificate.api.db;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> origin/master
 import org.openmrs.api.db.DAOException;
 import org.openmrs.module.birthcertificate.api.BirthCertificateService;
 import org.openmrs.module.birthcertificate.model.BirthRegistration;
@@ -21,6 +24,7 @@ import org.openmrs.module.birthcertificate.model.BirthRegistration;
  */
 public interface BirthCertificateDAO {
 
+<<<<<<< HEAD
     public void addbirthCertificate(BirthRegistration birthRegistration) throws DAOException;
 
     public void updatebirthCertificate(BirthRegistration birthRegistration) throws DAOException;
@@ -34,3 +38,10 @@ public interface BirthCertificateDAO {
     public BirthRegistration getBirthRegById(Integer id) throws DAOException;
 
 }
+=======
+ public BirthRegistration saveBirthRegistration(BirthRegistration birthRegistration) throws DAOException;
+ 
+ public BirthRegistration getBirthRegById(Integer id)throws DAOException;
+}
+
+>>>>>>> origin/master
