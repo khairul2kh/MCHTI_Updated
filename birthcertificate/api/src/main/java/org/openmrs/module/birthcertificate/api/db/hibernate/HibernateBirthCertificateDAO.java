@@ -13,17 +13,26 @@
  */
 package org.openmrs.module.birthcertificate.api.db.hibernate;
 
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.openmrs.api.db.DAOException;
 import org.openmrs.module.birthcertificate.api.db.BirthCertificateDAO;
+import org.openmrs.module.birthcertificate.model.BirthRegistration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  * It is a default implementation of  {@link BirthCertificateDAO}.
  */
+@Repository
 public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
 	protected final Log log = LogFactory.getLog(this.getClass());
 	
+        @Autowired
 	private SessionFactory sessionFactory;
 	
 	/**
@@ -32,11 +41,39 @@ public class HibernateBirthCertificateDAO implements BirthCertificateDAO {
     public void setSessionFactory(SessionFactory sessionFactory) {
 	    this.sessionFactory = sessionFactory;
     }
-    
-	/**
-     * @return the sessionFactory
-     */
+   
     public SessionFactory getSessionFactory() {
 	    return sessionFactory;
     }
+
+    @Override
+    public BirthRegistration getBirthRegById(Integer id) throws DAOException {
+           Criteria criteria=sessionFactory.getCurrentSession().createCriteria(BirthRegistration.class);
+         criteria.add(Restrictions.eq("id", id));
+        return (BirthRegistration) criteria.uniqueResult();
+    }
+
+    @Override
+    public void addbirthCertificate(BirthRegistration birthRegistration) throws DAOException {
+        sessionFactory.getCurrentSession().saveOrUpdate(birthRegistration);
+    }
+
+    @Override
+    public void updatebirthCertificate(BirthRegistration birthRegistration) throws DAOException {
+       sessionFactory.getCurrentSession().update(birthRegistration);
+    }
+
+    @Override
+    public List<BirthRegistration> listBirthRegistration(Integer id) throws DAOException {
+        return sessionFactory.getCurrentSession().createQuery("from BirthRegistration "
+                +"where id= '" + id + "'").list();
+                
+    }
+
+    @Override
+    public void removebirthCertificate(BirthRegistration birthRegistration) throws DAOException {
+        sessionFactory.getCurrentSession().delete(birthRegistration);
+    }
+
+
 }

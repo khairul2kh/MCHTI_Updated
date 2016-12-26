@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.birthcertificate.model">
+    <class name="BirthRegistration" table="birth_registration">
+            
+        <id name="id" type="int" column="id"
+            unsaved-value="0">
+            <generator class="native" />
+        </id>
+    
+        <property name="memoNo" column="memo_no" />
+        <property name="date" column="date" />
+        <property name="registrationNo" column="registration_no" />
+        <property name="name" column="name" />
+        <property name="sex" column="sex" />
+        <property name="dateOfBirth" column="date_of_birth" />
+        <property name="timeOfBirth" column="time_of_birth" />
+        <property name="mothersName" column="mothers_name" />
+        <property name="nidMoth" column="nid_no_moth" />
+        <property name="fathersName" column="fathers_name" />
+        <property name="nidFath" column="nid_no_fath" />
+        <property name="presentAdd" column="present_add" />
+        <property name="permanentAdd" column="permanent_add" />
+        <property name="createdDate" column="created_date" />
+        <many-to-one name="creator" column="creator" class="org.openmrs.User"
+                             foreign-key="fk_birth_reg_user" />
+    </class>
+</hibernate-mapping>
